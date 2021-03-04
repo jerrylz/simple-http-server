@@ -9,10 +9,6 @@ import com.abchina.http.session.Session;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * @Author: xiantang
- * @Date: 2020/4/26 23:16
- */
 public class SessionInBoundPipeline extends BoundPipeline {
     public SessionInBoundPipeline(ServletContext context) {
         super(context);

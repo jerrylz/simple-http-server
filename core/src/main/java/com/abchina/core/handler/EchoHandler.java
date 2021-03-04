@@ -14,13 +14,6 @@ import static com.abchina.core.reactor.Constants.SENDING;
 
 public class EchoHandler extends BaseHandler {
 
-    /**
-     * the constructor of handler.
-     * we will register channel to selector and  wakeup it
-     * and attach the this object prepare to use.
-     *
-     * @param context
-     */
     public EchoHandler(ServletContext context) {
         super(context);
     }

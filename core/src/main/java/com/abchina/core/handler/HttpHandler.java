@@ -13,13 +13,6 @@ import static com.abchina.core.reactor.Constants.CLOSED;
 import static com.abchina.core.reactor.Constants.SENDING;
 
 public class HttpHandler extends BaseHandler {
-    /**
-     * the constructor of handler.
-     * we will register channel to selector and  wakeup it
-     * and attach the this object prepare to use.
-     *
-     * @param context
-     */
     public HttpHandler(ServletContext context) {
         super(context);
     }

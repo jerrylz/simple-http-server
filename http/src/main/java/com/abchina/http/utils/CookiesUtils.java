@@ -2,10 +2,6 @@ package com.abchina.http.utils;
 
 import com.abchina.http.session.Cookies;
 
-/**
- * @Author: xiantang
- * @Date: 2020/4/26 22:35
- */
 public class CookiesUtils {
     public static Cookies parse(String rawCookie) {
         String[] cookieArray = rawCookie.split("; ");

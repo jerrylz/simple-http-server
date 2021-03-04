@@ -7,13 +7,6 @@ import java.util.Map;
 public class EqualsUtils {
 
 
-    /**
-     * compare two object with depth 1
-     * @param firstObj
-     * @param secondObj
-     * @return
-     * @throws IllegalAccessException
-     */
     public static boolean OneDepthContentEquals(Object firstObj, Object secondObj) throws IllegalAccessException {
         return getFieldMap(firstObj).equals(getFieldMap(secondObj));
     }

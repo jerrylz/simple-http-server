@@ -4,10 +4,7 @@ import com.abchina.core.handler.ServletContext;
 import com.abchina.http.core.HttpRequest;
 import com.abchina.http.core.HttpResponse;
 
-/**
- * @Author: xiantang
- * @Date: 2020/4/26 22:56
- */
+
 public abstract class BoundPipeline implements Pipeline{
     private Pipeline next;
     private final ServletContext context;

@@ -3,10 +3,6 @@ package com.abchina.http.session;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @Author: xiantang
- * @Date: 2020/4/26 23:30
- */
 public class Session {
     private String sessionId;
     private Map<String, Object> mapper = new HashMap<>();

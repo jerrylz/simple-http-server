@@ -4,10 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * @Author: xiantang
- * @Date: 2020/4/26 22:35
- */
 public class Cookies {
     private Map<String, String> map = new HashMap<>();
     public void put(String key, String value) {
