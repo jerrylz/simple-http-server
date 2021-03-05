@@ -1,6 +1,7 @@
 package com.abchina.core.handler.processor;
 
 import com.abchina.core.handler.ServletContext;
+import com.abchina.core.server.impl.NotFoundServlet;
 import com.abchina.core.utils.FileUtils;
 import com.abchina.http.core.HttpRequest;
 import com.abchina.http.core.HttpResponse;
@@ -23,12 +24,18 @@ public class HttpStaticResourcesProcessor implements Processor {
         String suffix = path.substring(path.lastIndexOf(".") + 1);
         File jarFile = context.getJarFile();
         byte[] bytes = FileUtils.readFileFromJar(jarFile, path);
+        if(bytes == null){
+            NotFoundServlet servlet = new NotFoundServlet();
+            servlet.service(request, response);
+            return;
+        }
         ContentTypeMapper mapper = context.getContentTypeMapper();
         String contentType = mapper.get(suffix);
         if (contentType != null) {
             response.addHeader("Content-Type", contentType);
         }
         OutputStream outputStream = response.getResponseOutputStream();
+
         outputStream.write(bytes);
     }
 }

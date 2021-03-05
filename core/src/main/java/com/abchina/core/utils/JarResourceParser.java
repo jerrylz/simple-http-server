@@ -10,7 +10,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 public class JarResourceParser {
-    private static final String CONFIG_NAME = "config.json";
+    private static final String CONFIG_NAME = "web.json";
     public static Configuration parseConfigFromJar(File file) throws IOException {
         JarFile jarFile = new JarFile(file.getAbsolutePath());
         Enumeration<JarEntry> entries = jarFile.entries();
