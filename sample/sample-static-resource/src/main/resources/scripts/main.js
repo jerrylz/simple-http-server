@@ -13,7 +13,7 @@ myImage.onclick = function() {
 // 个性化欢迎信息
 function setHeading(name) {
     let myHeading = document.querySelector('h1');
-    myHeading.textContent = 'JerryMouse is Cool !';
+    myHeading.textContent = 'It is SimpleHttpServer!';
 }
 
 function setUserName() {
