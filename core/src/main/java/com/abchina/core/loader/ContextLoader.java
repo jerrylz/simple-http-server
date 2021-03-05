@@ -1,5 +1,7 @@
 package com.abchina.core.loader;
 
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import com.abchina.core.conf.Configuration;
 import com.abchina.core.server.Context;
 import com.abchina.core.server.HttpServer;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContextLoader {
+
+    private Log log = LogFactory.get(ContextLoader.class);
 
     private String rootPath = System.getProperty("user.dir");
     private String jarPath;
@@ -48,7 +52,7 @@ public class ContextLoader {
                 if (configuration == null) continue;
                 ServerSource serverSource = new ServerSource(file.getName(), configuration);
                 sources.add(serverSource);
-                System.out.println("加载jar包" + file.getName() + "中的资源");
+                log.info("加载jar包{}中的资源", file.getName());
             }
         }
     }

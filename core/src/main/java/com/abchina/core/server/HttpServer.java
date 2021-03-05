@@ -1,5 +1,7 @@
 package com.abchina.core.server;
 
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import com.abchina.core.lifecycle.LifeCycle;
 import com.abchina.core.loader.ContextLoader;
 import com.abchina.core.scanner.FileScanner;
@@ -12,6 +14,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class HttpServer implements LifeCycle {
+
+    private static Log log = LogFactory.get(HttpServer.class);
     private final FileScanner fileScanner;
     private List<Context> contexts;
     private List<ServerSource> sources;
@@ -38,6 +42,7 @@ public class HttpServer implements LifeCycle {
 
     @Override
     public void init() throws Exception {
+        log.info("初始化应用环境");
         //加载应用上下文
         contextLoader.load();
         //初始化文件监听器
@@ -53,6 +58,7 @@ public class HttpServer implements LifeCycle {
             context.start();
         }
         new Thread(fileScanner).start();
+        log.info("服务启动完成");
 
     }
 
