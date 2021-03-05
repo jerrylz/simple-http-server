@@ -14,7 +14,7 @@ import java.util.Map;
 public class HttpResponse implements Response {
     private int statusCode;
     private Map<String, String> headers = new HashMap<>();
-    private static final String server = "JerryMouse";
+    private static final String server = "SimpleHttpServer";
     private ByteBuffer bodyBuffer = ByteBuffer.allocate(1024*1024);
     private ByteBuffer outputBuffer;
 
